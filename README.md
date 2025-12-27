@@ -63,22 +63,40 @@ wool-plm-agent-system/
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
 │   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent         │   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── __init__.py
-│   │   ├── base_agent.py    
-│   │   ├── orchestration_agent/ 
+│   │   ├── base_agent.py   # Abstract base class for all agents
+│   │   ├── orchestration_agent/      # Agent responsible for coordinating others
+│   │   │   ├── __init__.py
 │   │   │   ├── workflow_manager.py
 │   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
 │   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
 │   │   │   ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
 │   │   │   └── sustainability_lca.py  # Life cycle/Biodegradability tracking
 │   │   ├── design_agent/
+│   │   │   ├── __init__.py
+│   │   │   ├── generative_design.py
+│   │   │   ├── optimization.py
+│   │   │   └── feature_recognition.py
+│   │   ├── simulation_agent/
+│   │   │   ├── __init__.py
+│   │   │   ├── meshing_automation.py
+│   │   │   ├── solver_setup.py
+│   │   │   └── reduced_order_modeling.py
+│   │   ├── analysis_agent/
+│   │   │   ├── __init__.py
+│   │   │   ├── result_interpretation.py
+│   │   │   └── validation.py
+│   │   ├── manufacturing_agent/
+│   │   │   ├── __init__.py
+│   │   │   ├── process_selection.py
+│   │   │   ├── cam_toolpath.py
+│   │   │   └── quality_control.py
 │   │   ├── designer_agent.py # The AI "Mechanical Agent" loop
 │   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
-│   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
-│   ├── agents/             # MULTIMODAL AGENT ORCHESTRATION
+│   │   ├── supervisor.py   # Multi-agent orchestrator, LangGraph/CrewAI orchestrator to manage handoffs
+│   │   │                   # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
 │   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
-│   │   └── supervisor.py   # LangGraph/CrewAI orchestrator to manage handoffs
 │   ├── engines/            # CORE COMPUTATIONAL MODELS
 │   │   ├── generative.py   # Generative algorithms for 3D wool structures
 │   │   └── deep_learning.py# Deep learning for predictive maintenance
