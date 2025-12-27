@@ -4,8 +4,14 @@ TecX Mechanical Agentic AI
 ```
 
 wool-plm-agent-system/
-├── .github/                # CI/CD workflows for testing agents
-|   ├── workflows/          # Automated testing (CI/CD) and security scans
+├── .github/                # CI/CD workflows for testing agents,  # GitHub-specific configurations
+|   ├── workflows/          # Automated testing (CI/CD) and security scans, # CI/CD pipelines (GitHub Actions)
+│   │   ├── ci.yml          # Continuous Integration pipeline
+│   │   ├── cd.yml          # Continuous Deployment pipeline (optional)
+│   │   └── linting.yml     # Code linting and formatting checks
+│   └── ISSUE_TEMPLATE.md   # Template for bug reports and feature requests
+│   └── PULL_REQUEST_TEMPLATE.md # Template for pull requests
+│
 ├── config/                 # YAML/JSON configs for models & GA params
 │   ├── agents.yaml         # Configuration for OpenAI and Google model roles
 │   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
@@ -20,8 +26,28 @@ wool-plm-agent-system/
 ├── scripts/                
 │   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
 ├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
-├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,        │                              Engineering specs & Life Cycle maps # Keep your Documentation structure
-│   ├── spec.md
+├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,    │   │                       Engineering specs & Life Cycle maps # Keep your Documentation structure,                │   │                         # Documentation for the project
+│   ├── spec.md             
+│   ├── architecture.md     # High-level architecture overview (this document!)
+│   ├── installation/       # Installation and setup guides
+│   │   ├── index.md
+│   │   └── requirements.md # Software/hardware prerequisites
+│   ├── usage/              # User guides and tutorials
+│   │   ├── index.md
+│   │   ├── design_automation.md
+│   │   ├── simulation_automation.md
+│   │   └── manufacturing_automation.md
+│   ├── development/        # Guides for contributors
+│   │   ├── index.md
+│   │   ├── contributing.md # How to contribute
+│   │   ├── testing.md      # How to run and write tests
+│   │   └── coding_standards.md
+│   ├── api/                # API documentation (if applicable)
+│   │   └── index.md
+│   ├── research/           # Papers, surveys, or internal research notes
+│   │   └── index.md
+│   └── README.md           # Main README for the docs directory
+│
 ├── src/                    # Primary source code
 │   ├── domain/             # UNIT 1: Pure Engineering Rules # Pure physics and engineering models
 │   │   ├── physics.py      # Stress/Strain formulas
