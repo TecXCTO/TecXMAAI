@@ -61,7 +61,8 @@ wool-plm-agent-system/
 │   │   ├── cad/            # SolidWorks/FreeCAD specific code
 │   │   ├── llm/            # LangChain/AI agent logic
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
-│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent definition, │   │                        # MULTIMODAL AGENT ORCHESTRATION
+│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent         │   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
+│   │   ├── __init__.py
 │   │   ├── base_agent.py    
 │   │   ├── orchestration_agent/ 
 │   │   │   ├── workflow_manager.py
