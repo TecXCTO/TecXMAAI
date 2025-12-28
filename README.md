@@ -133,19 +133,33 @@ wool-plm-agent-system/
 │   │   └── knowledge_base/ # Interfaces for accessing engineering knowledge
 │   │       ├── __init__.py
 │   │       ├── design_rules.py
-│   │       ├── material_database.py   # Add Wool Grade/Micron data here
-│   │       └── textile_physics_rules.py <-- [ADD] Mechanical rules for wool
+│   │       ├── material_database.py   # Add Grade/Micron data here
+│   │       └── physics_rules.py <-- [ADD] Mechanical rules
 │   │
-│   ├── integrations/       # Keep your SolidWorks/Ansys APIs
-│   │   └── wool_supply_chain/         <-- [ADD] API for wool sourcing/farming data
+│   ├── integrations/       # Code for interacting with external tools/APIs, # Keep your SolidWorks/Ansys APIs
+│   │   ├── __init__.py
+│   │   ├── cad_interfaces/
+│   │   │   ├── __init__.py
+│   │   │   ├── solidworks_api.py
+│   │   │   └── fusion360_api.py
+│   │   ├── simulation_interfaces/
+│   │   │   ├── __init__.py
+│   │   │   ├── ansys_api.py
+│   │   │   └── comsol_api.py
+│   │   └── manufacturing_interfaces/
+│   │       ├── __init__.py
+│   │       └── cnc_controller_api.py       
+│   │   └── supply_chain/         <-- [ADD] API for wool sourcing/farming data
 │   ├── tools/              # Specialized mechanical engineering tools,    # MECHANICAL ENGINEERING UTILITIES
 │   │   ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
 │   │   ├── lca_analyzer.py # Life Cycle Assessment for sustainability
 │   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
 │   │   └── simulation.py   # Physics-based simulation wrappers
-│   ├── utils/              # Helper functions for API and data handling
-│   └── main.py             # Entry point (often a FastAPI app), (Triggers either Agent mode or Evolution mode)
-│
+│   ├── utils/            # Helper(General utility) functions for API and data handling, not specific to agents
+│   │   ├── __init__.py
+│   │   ├── logging_config.py
+│   │   └── config_loader.py
+│   └── main.py             # Entry point for running the AI system (often a FastAPI app), (Triggers either    │                             Agent mode or Evolution mode)
 ├── notebooks/              # Keep for experimentation
 ├── tests/                  # Unit tests for agents and GA logic # Keep for quality control
 ├── .gitignore              # Standard Python and large data exclusions
