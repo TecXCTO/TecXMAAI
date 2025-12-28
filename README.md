@@ -182,28 +182,30 @@ wool-plm-agent-system/
 │   │   ├── ai_models/
 │   │   │   ├─ __init__.py
 │   │   │   ├─ generative_design.py
-│   │   │   └── reinforcement_learning.py
+│   │   │   └─ reinforcement_learning.py
 │   │   ├─ analysis/
 │   │   │   ├─ __init__.py
 │   │   │   ├─ cf_analyzer.py
-│   │   │   └── fe_analyzer.py
+│   │   │   └─ fe_analyzer.py
 │   │   ├── cad_interfaces/
-│   │   │   ├── __init__.py
-│   │   │   ├─
-│   │   │   ├── solidworks_api.py
-│   │   │   └── fusion360_api.py
+│   │   │   ├─ __init__.py
+│   │   │   ├─ cad_interface.py
+│   │   │   ├─ solidworks_api.py
+│   │   │   └─ fusion360_api.py
 │   │   ├── simulation_interfaces/
-│   │   │   ├── __init__.py
-│   │   │   ├─
-│   │   │   ├── ansys_api.py
-│   │   │   ├─
-│   │   │   └── comsol_api.py
+│   │   │   ├─ __init__.py
+│   │   │   ├─ abaqus.py
+│   │   │   ├─ ansys_api.py
+│   │   │   ├─ sim_interface.py
+│   │   │   └─ comsol_api.py
 │   │   ├── manufacturing_interfaces/
-│   │   │    ├── __init__.py
-│   │   │    ├─
-│   │   │    ├─
-│   │   │    └── cnc_controller_api.py      
+│   │   │    ├─ __init__.py
+│   │   │    ├─ cam_interface.py
+│   │   │    ├─ robot_control.py
+│   │   │    └─ cnc_controller_api.py      
 │   │   └── supply_chain/         <-- [ADD] API for sourcing/farming data
+│   │   │   ├── __init__.py
+│   │   │   └──
 │   ├── tools/              # Specialized mechanical engineering tools,    # MECHANICAL ENGINEERING UTILITIES
 │   │   ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
 │   │   ├── lca_analyzer.py # Life Cycle Assessment for sustainability
