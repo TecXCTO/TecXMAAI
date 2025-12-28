@@ -88,9 +88,14 @@ wool-plm-agent-system/
 │   │   │   └── sustainability_lca.py  # Life cycle/Biodegradability tracking
 │   │   ├── design_agent/
 │   │   │   ├── __init__.py
+│   │   │   ├──concept_exploration.py
+│   │   │   ├──concept_generation.py
 │   │   │   ├── generative_design.py
+│   │   │   ├──feature_recognition.py
+│   │   │   ├──parametric_modeling.py
 │   │   │   ├── optimization.py
-│   │   │   └── feature_recognition.py
+│   │   │   ├──design_optimization.py
+│   │   │   ├──knowledge-based_design.py
 │   │   ├── simulation_agent/
 │   │   │   ├── __init__.py
 │   │   │   ├── meshing_automation.py
