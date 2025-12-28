@@ -9,7 +9,7 @@ wool-plm-agent-system/
 │   │   ├── ci.yml          # Continuous Integration pipeline
 │   │   ├── cd.yml          # Continuous Deployment pipeline (optional)
 │   │   └── linting.yml     # Code linting and formatting checks
-│   └── ISSUE_TEMPLATE.md   # Template for bug reports and feature requests
+│   ├── ISSUE_TEMPLATE.md   # Template for bug reports and feature requests
 │   └── PULL_REQUEST_TEMPLATE.md # Template for pull requests
 │
 ├── config/                 # YAML/JSON configs for models & GA params
@@ -34,16 +34,24 @@ wool-plm-agent-system/
 │
 ├── scripts/                # Helper scripts for common tasks
 │   ├── download_data.sh    # Script to download datasets
-│   ├──generate_cad.py
+│   ├── generate_cad.py
 │   ├── train_model.py      # Script to launch model training
 │   ├── run_simulation.py   # Script to trigger a simulation via agent
-│   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
+│   ├── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
 │   └── README.md           # README for the scripts directory
 ├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
 ├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,
 │   │                       Engineering specs & Life Cycle maps # Keep your Documentation structure,
-│   │                         # Documentation for the project
-│   ├── spec.md             
+│   │                       # Documentation for the project
+│   ├── spec.md
+│   ├──api                  # API documentation (if applicable)
+│   │   ├──index.md
+│   │   └──README.md
+│   ├──architecture
+│   │   ├── agent_interaction_diagram.svg
+│   │   ├── data_flow_diagram.svg
+│   │   ├── module_dependencies.md
+│   │   └── overall_architecture.md             
 │   ├── architecture.md     # High-level architecture overview (this document!)
 │   ├── installation/       # Installation and setup guides
 │   │   ├── index.md
@@ -58,10 +66,12 @@ wool-plm-agent-system/
 │   │   ├── contributing.md # How to contribute
 │   │   ├── testing.md      # How to run and write tests
 │   │   └── coding_standards.md
-│   ├── api/                # API documentation (if applicable)
-│   │   └── index.md
 │   ├── research/           # Papers, surveys, or internal research notes
 │   │   └── index.md
+│   └── tutorials
+│   │   ├── configuring_your_environment.md
+│   │   ├── first_design_agent_run.md
+│   │   └── getting_started.md
 │   └── README.md           # Main README for the docs directory
 │
 ├── src/                    # Primary source code
