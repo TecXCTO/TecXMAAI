@@ -16,17 +16,32 @@ wool-plm-agent-system/
 │   ├── agents.yaml         # Configuration for OpenAI and Google model roles
 │   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
 │   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
-├── data/                   # Raw wool fiber scans and CAD specs (gitignored) # raw/ and processed/ engineering data
+├── data/                  ''' # Raw wool fiber scans and CAD specs (gitignored) # raw/ and
+│   │                            processed/  engineering data # Datasets (consider large file
+│   │                            storage like Git LFS or external services) '''
 │   ├── cad_library/        # Versioned .STEP/.STL files
 │   ├── materials_db/       # CSV/JSON material properties
-│   ├── processed/          # Processed engineering data
-│   ├── raw/                # Raw engineering data
-│   ├── wool_samples/                  <-- [ADD] Dataset for fiber strength/images
-│   └── evolved_variants/              <-- [ADD] Storage for generated model weights
-├── scripts/                
+│   ├── processed/          # Processed engineering data # Cleaned, transformed, and ready-to-use data
+│   │   ├── design_datasets/
+│   │   └── simulation_datasets/
+│   ├── raw/                # Raw engineering data # Original, unprocessed data
+│   │   ├── cad_models/
+│   │   └── simulation_results/
+│   ├── samples/                  <-- [ADD] Dataset for fiber strength/images
+│   ├── evolved_variants/              <-- [ADD] Storage for generated model weights
+│   ├── external/           # Data from external sources
+│   └── README.md           # README explaining data structure and licensing
+│
+├── scripts/                # Helper scripts for common tasks
+│   ├── download_data.sh    # Script to download datasets
+│   ├── train_model.py      # Script to launch model training
+│   ├── run_simulation.py   # Script to trigger a simulation via agent
 │   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
+│   └── README.md           # README for the scripts directory
 ├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
-├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,    │   │                       Engineering specs & Life Cycle maps # Keep your Documentation structure,                │   │                         # Documentation for the project
+├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,
+│   │                       Engineering specs & Life Cycle maps # Keep your Documentation structure,
+│   │                         # Documentation for the project
 │   ├── spec.md             
 │   ├── architecture.md     # High-level architecture overview (this document!)
 │   ├── installation/       # Installation and setup guides
@@ -160,12 +175,34 @@ wool-plm-agent-system/
 │   │   ├── logging_config.py
 │   │   └── config_loader.py
 │   └── main.py             # Entry point for running the AI system (often a FastAPI app), (Triggers either    │                             Agent mode or Evolution mode)
-├── notebooks/              # Keep for experimentation
-├── tests/                  # Unit tests for agents and GA logic # Keep for quality control
-├── .gitignore              # Standard Python and large data exclusions
+├── notebooks/              # Keep for experimentation # Jupyter notebooks for experimentation and demos
+│   ├── experiments/        # Notebooks for testing specific algorithms/models
+│   │   ├── design_exploration.ipynb
+│   │   └── simulation_surrogate.ipynb
+│   ├── demos/              # Notebooks demonstrating agent capabilities
+│   │   ├── design_to_sim_workflow.ipynb
+│   │   └── manufacturing_planning_demo.ipynb
+│   └── README.md           # README for the notebooks directory
+│
+├── tests/                  # Unit tests for agents and GA logic # Keep for quality control # integration tests
+│   ├── __init__.py
+│   ├── agents/
+│   │   ├── test_design_agent.py
+│   │   └── test_simulation_agent.py
+│   ├── core/
+│   │   ├── test_data_processing.py
+│   │   └── test_models.py
+│   └── integrations/
+│       └── test_cad_interface.py
+├── .gitignore              # Standard Python and large data exclusions # Files and directories to ignore by Git
 ├── pyproject.toml          # Modern dependency management
-├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, torch, langchain-google-genai, openai, pygad)
-├── Dockerfile              # For containerized deployment
-└── README.md               # Project overview and lifecycle goals, # Documentation of the self-evolving PLM system
+├── requirements.txt        # Python dependencies for general use # Legacy dependency list (PyTorch, LangChain, torch, langchain-google-genai, openai, pygad)
+├── requirements_dev.txt    # Python dependencies for development (linters, testers, etc.)
+├── requirements_gpu.txt    # Python dependencies if GPU support is required
+├── Dockerfile              # For containerized deployment # For containerizing the application
+├── docker-compose.yml      # For orchestrating multi-container Docker applications
+├── LICENSE                 # Project license (e.g., MIT, Apache 2.0) 
+├── README.md               # Project overview and lifecycle goals, Documentation of the self-evolving PLM system
+└── setup.py   
 
 ```
