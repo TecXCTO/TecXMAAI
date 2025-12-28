@@ -83,9 +83,9 @@ wool-plm-agent-system/
 │   │   │   ├── __init__.py
 │   │   │   ├── workflow_manager.py
 │   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
-│   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
+│   │   └── lifecycle_agent/      <-- [ADD] Specific Agent for Mechanical Properties
 │   │   │   ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
-│   │   │   └── sustainability_lca.py  # Life cycle/Biodegradability tracking
+│   │   │   └── sustainability_lca.py  # Life cycle/degradability tracking (Biodegradability, corrosion, etc.)
 │   │   ├── design_agent/
 │   │   │   ├── __init__.py
 │   │   │   ├──concept_exploration.py
@@ -110,15 +110,20 @@ wool-plm-agent-system/
 │   │   │   ├── process_selection.py
 │   │   │   ├── cam_toolpath.py
 │   │   │   └── quality_control.py
-│   │   ├── designer_agent.py # The AI "Mechanical Agent" loop
-│   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
+│   │   ├── design_agent.py # The AI "Mechanical Agent" loop # Uses for 3D generative CAD
+│   │   ├──analysis_agent.py
+│   │   ├──manufacturing_agent.py
+│   │   ├──simulation_agent.py
+│   │   ├──orchestration_agent.py
+│   │   ├──lifecycle_agent.py
+│   │   ├──orchestration_agent
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
 │   │   ├── supervisor.py   # Multi-agent orchestrator, LangGraph/CrewAI orchestrator to manage handoffs
 │   │   │                   # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
 │   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
 │   ├── engines/            # CORE COMPUTATIONAL MODELS
-│   │   ├── generative.py   # Generative algorithms for 3D wool structures
+│   │   ├── generative.py   # Generative algorithms for 3D structures
 │   │   └── deep_learning.py# Deep learning for predictive maintenance
 │   │
 │   ├── evolution/          # Genetic Algorithm engine, <-- [ADD] THE SELF-GENERATION ENGINE # THE NEUROEVOLUTION ENGINE
@@ -195,6 +200,9 @@ wool-plm-agent-system/
 │   │   ├── test_design_agent.py
 │   │   └── test_simulation_agent.py
 │   ├── core/
+│   │   ├──__init__.py
+│   │   ├──test_config.py
+│   │   ├──test_data_manager.py
 │   │   ├── test_data_processing.py
 │   │   └── test_models.py
 │   └── integrations/
