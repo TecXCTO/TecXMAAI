@@ -34,6 +34,7 @@ wool-plm-agent-system/
 │
 ├── scripts/                # Helper scripts for common tasks
 │   ├── download_data.sh    # Script to download datasets
+│   ├──generate_cad.py
 │   ├── train_model.py      # Script to launch model training
 │   ├── run_simulation.py   # Script to trigger a simulation via agent
 │   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
@@ -192,6 +193,7 @@ wool-plm-agent-system/
 │   ├── demos/              # Notebooks demonstrating agent capabilities
 │   │   ├── design_to_sim_workflow.ipynb
 │   │   └── manufacturing_planning_demo.ipynb
+│   ├──data_exploration.ipynb
 │   └── README.md           # README for the notebooks directory
 │
 ├── tests/                  # Unit tests for agents and GA logic # Keep for quality control # integration tests
@@ -205,8 +207,17 @@ wool-plm-agent-system/
 │   │   ├──test_data_manager.py
 │   │   ├── test_data_processing.py
 │   │   └── test_models.py
-│   └── integrations/
-│       └── test_cad_interface.py
+│   ├── integrations/
+│   │   └── test_cad_interface.py
+│   └── modules
+│   │   ├──__init__.py
+│   │   ├──cad
+│   │   │   ├──__init__.py
+│   │   │   └──test_solidworks.py
+│   │   └──simulation
+│   │   │   ├──__init__.py
+│   │   │   └──test_ansys.py
+│  
 ├── .gitignore              # Standard Python and large data exclusions # Files and directories to ignore by Git
 ├── pyproject.toml          # Modern dependency management
 ├── requirements.txt        # Python dependencies for general use # Legacy dependency list (PyTorch, LangChain, torch, langchain-google-genai, openai, pygad)
