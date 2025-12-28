@@ -16,9 +16,9 @@ wool-plm-agent-system/
 │   ├── agents.yaml         # Configuration for OpenAI and Google model roles
 │   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
 │   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
-├── data/                  ''' # Raw wool fiber scans and CAD specs (gitignored) # raw/ and
+├── data/                  ``` # Raw wool fiber scans and CAD specs (gitignored) # raw/ and
 │   │                            processed/  engineering data # Datasets (consider large file
-│   │                            storage like Git LFS or external services) '''
+│   │                            storage like Git LFS or external services) ```
 │   ├── cad_library/        # Versioned .STEP/.STL files
 │   ├── materials_db/       # CSV/JSON material properties
 │   ├── processed/          # Processed engineering data # Cleaned, transformed, and ready-to-use data
