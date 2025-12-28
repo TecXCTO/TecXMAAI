@@ -61,7 +61,7 @@ wool-plm-agent-system/
 │   │   ├── cad/            # SolidWorks/FreeCAD specific code
 │   │   ├── llm/            # LangChain/AI agent logic
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
-│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent         │   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
+│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent    │   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── __init__.py
 │   │   ├── base_agent.py   # Abstract base class for all agents
 │   │   ├── orchestration_agent/      # Agent responsible for coordinating others
@@ -113,13 +113,26 @@ wool-plm-agent-system/
 │   │   ├── fitness_engine.py   # Evaluates models on wool mechanical properties
 │   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE,  # SCRIPT TO GENERATE NEW NEURAL NETWORKS 
 │   │
-│   ├── core/               
-│   │   ├── models/           # Pre-trained and evolved model classes
+│   ├── core/               # Core utilities, data structures, and algorithms
+│   │   ├── __init__.py
+│   │   ├── data_processing/
+│   │   │   ├── __init__.py
+│   │   │   ├── geometry_utils.py
+│   │   │   └── simulation_data_parser.py             
+│   │   ├── models/           # Pre-trained and evolved model classes, Pre-trained or base model architectures
+│   │   │   ├── __init__.py
+│   │   │   ├── generative_models.py # e.g., GANs, VAEs
+│   │   │   └── surrogate_models.py
 │   │   │   ├── base_architectures.py
 │   │   │   ├── base_network.py # Blueprint for deep learning models
 │   │   │   │── multimodal.py   # Fusion logic for text/image/audio inputs
 │   │   │   └── evolved_models/        <-- [ADD] Destination for GA-generated models
-│   │   └── knowledge_base/ 
+│   │   ├── algorithms/     # General algorithms used across agents
+│   │   │   ├── __init__.py
+│   │   │   └── optimization_algorithms.py
+│   │   └── knowledge_base/ # Interfaces for accessing engineering knowledge
+│   │       ├── __init__.py
+│   │       ├── design_rules.py
 │   │       ├── material_database.py   # Add Wool Grade/Micron data here
 │   │       └── textile_physics_rules.py <-- [ADD] Mechanical rules for wool
 │   │
