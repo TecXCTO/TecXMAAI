@@ -13,10 +13,15 @@ wool-plm-agent-system/
 │   └── PULL_REQUEST_TEMPLATE.md # Template for pull requests
 │
 ├── config/                 # YAML/JSON configs for models & GA params
+│   ├── agents/
+│   │   ├── analysis_agent.yaml
+│   │   ├── main_config.yaml
+│   │   ├── manufacturing_agent.yaml
+│   │   └── simulation_agent.yaml
 │   ├── agents.yaml         # Configuration for OpenAI and Google model roles
 │   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
-│   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
-├── data/                   # Raw wool fiber scans and CAD specs (gitignored) # raw/ and
+│   └── lifecycle.yaml      # PLM specific constraints (ISO standards)
+├── data/                   # Raw scans and CAD specs (gitignored) # raw/ and
 │   │                         processed/  engineering data # Datasets (consider large file
 │   │                         storage like Git LFS or external services)
 │   ├── cad_library/        # Versioned .STEP/.STL files
