@@ -49,10 +49,10 @@ wool-plm-agent-system/
 │   │                       Engineering specs & Life Cycle maps # Keep your Documentation structure,
 │   │                       # Documentation for the project
 │   ├── spec.md
-│   ├──api                  # API documentation (if applicable)
+│   ├──api/                  # API documentation (if applicable)
 │   │   ├──index.md
 │   │   └──README.md
-│   ├──architecture
+│   ├──architecture/
 │   │   ├── agent_interaction_diagram.svg
 │   │   ├── data_flow_diagram.svg
 │   │   ├── module_dependencies.md
@@ -84,7 +84,7 @@ wool-plm-agent-system/
 │   │   ├── physics.py      # Stress/Strain formulas
 │   │   └── materials.py    # Material entity definitions
 │   ├── use_cases/          # Lifecyle workflows (e.g. design_validation.py)
-│   │   ├── design_validation.py
+│   │   └── design_validation.py
 │   ├── repositories/       # Repository interfaces and implementations # UNIT 2: The Data Gate (Interfaces)
 │   │   ├── base_repo.py    # ABC for data access
 │   │   └── cad_repo.py     # ABC for CAD file management
@@ -92,7 +92,8 @@ wool-plm-agent-system/
 │   │   ├── cad/            # SolidWorks/FreeCAD specific code
 │   │   ├── llm/            # LangChain/AI agent logic
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
-│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent    │   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
+│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent
+│   │   │                       definition, # Individual AI agent modules,  # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── __init__.py
 │   │   ├── base_agent.py   # Abstract base class for all agents
 │   │   ├── orchestration_agent/      # Agent responsible for coordinating others
@@ -104,14 +105,14 @@ wool-plm-agent-system/
 │   │   │   └── sustainability_lca.py  # Life cycle/degradability tracking (Biodegradability, corrosion, etc.)
 │   │   ├── design_agent/
 │   │   │   ├── __init__.py
-│   │   │   ├──concept_exploration.py
-│   │   │   ├──concept_generation.py
+│   │   │   ├── concept_exploration.py
+│   │   │   ├── concept_generation.py
 │   │   │   ├── generative_design.py
-│   │   │   ├──feature_recognition.py
-│   │   │   ├──parametric_modeling.py
-│   │   │   ├── optimization.py
-│   │   │   ├──design_optimization.py
-│   │   │   ├──knowledge-based_design.py
+│   │   │   ├── feature_recognition.py
+│   │   │   ├── parametric_modeling.py
+│   │   │   ├──  optimization.py
+│   │   │   ├── design_optimization.py
+│   │   │   └── knowledge-based_design.py
 │   │   ├── simulation_agent/
 │   │   │   ├── __init__.py
 │   │   │   ├── meshing_automation.py
@@ -137,7 +138,7 @@ wool-plm-agent-system/
 │   │   ├── supervisor.py   # Multi-agent orchestrator, LangGraph/CrewAI orchestrator to manage handoffs
 │   │   │                   # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
-│   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
+│   │   └── google_agent.py # Handles vision/video inspection (Gemini 2.5)
 │   ├── engines/            # CORE COMPUTATIONAL MODELS
 │   │   ├── generative.py   # Generative algorithms for 3D structures
 │   │   └── deep_learning.py# Deep learning for predictive maintenance
@@ -215,7 +216,8 @@ wool-plm-agent-system/
 │   │   ├── __init__.py
 │   │   ├── logging_config.py
 │   │   └── config_loader.py
-│   └── main.py             # Entry point for running the AI system (often a FastAPI app), (Triggers either    │                             Agent mode or Evolution mode)
+│   └── main.py             # Entry point for running the AI system (often a FastAPI app), (Triggers either
+│                             Agent mode or Evolution mode)
 ├── notebooks/              # Keep for experimentation # Jupyter notebooks for experimentation and demos
 │   ├── experiments/        # Notebooks for testing specific algorithms/models
 │   │   ├── design_exploration.ipynb
@@ -240,13 +242,13 @@ wool-plm-agent-system/
 │   ├── integrations/
 │   │   └── test_cad_interface.py
 │   └── modules
-│   │   ├──__init__.py
-│   │   ├──cad
-│   │   │   ├──__init__.py
-│   │   │   └──test_solidworks.py
-│   │   └──simulation
-│   │   │   ├──__init__.py
-│   │   │   └──test_ansys.py
+│       ├──__init__.py
+│       ├──cad
+│       │   ├──__init__.py
+│       │   └──test_solidworks.py
+│       └──simulation
+│           ├──__init__.py
+│           └──test_ansys.py
 │  
 ├── .gitignore              # Standard Python and large data exclusions # Files and directories to ignore by Git
 ├── pyproject.toml          # Modern dependency management
