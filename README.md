@@ -5,7 +5,7 @@ Project overview and lifecycle goals, Documentation of the self-evolving PLM sys
 
 # TecXMAAI
 TecX Mechanical Agentic AI
-
+```
 TecX-wool-plm-agent-system/
 ├── .github/                # CI/CD workflows for testing agents,  # GitHub-specific configurations
 |   ├── workflows/          # Automated testing (CI/CD) and security scans, # CI/CD pipelines (GitHub Actions)
@@ -265,4 +265,5 @@ TecX-wool-plm-agent-system/
 └── setup.py   
 
 ```
+
 
