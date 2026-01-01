@@ -1,0 +1,9 @@
+google-generativeai
+python-dotenv
+requests
+PyTorch
+LangChain
+torch
+langchain-google-genai
+openai
+pygad # Python dependencies for general use
