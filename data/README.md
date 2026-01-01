@@ -1,0 +1,1 @@
+# README explaining data structure and licensing
