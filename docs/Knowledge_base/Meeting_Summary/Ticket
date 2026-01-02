@@ -1,1 +1,13 @@
+```
+Summarize meetings with AI tools
+Another simple technique you can use to provide your coding agent more context is to summarize meetings with AI tools, such as Granola, and provide this as context for your coding agent.
 
+For example, if you had a shaping meeting discussing how to implement a feature, you can summarize that meeting and provide it as context to your coding agent when implementing the feature.
+
+This way, the agent has access to all of the information you do about how the feature should be implemented. This is a cheap and simple technique you can utilize to improve the context of your coding agent.
+
+To amend the last section, I also want to highlight that shaping meetings should typically result in properly shaped tasks in project management tools such as Linear.
+
+The feature you’re implementing, for example, should be summarized and shaped completely into a single Linear issue or project. If this is the case, you should only have to provide for AI agent access to the Linear issue (which you can do with the Linear MCP), to ensure it has access to all the relevant information.
+
+```
