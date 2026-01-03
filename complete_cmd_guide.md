@@ -77,8 +77,11 @@ To install: pip install -e ".[dev]"
 
 # Recommended Quick-Start Commands
 If you want to install them immediately via terminal:
+```
 bash
 pip install ruff black mypy pytest pytest-cov pre-commit
+
+```
 Use code with caution.
 
 For professional projects, I highly recommend setting up a Pre-commit configuration to ensure your code is linted and formatted automatically before it ever reaches GitHub.
