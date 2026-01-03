@@ -36,6 +36,9 @@ rocm = [
     "torchvision",
 ]
 
+# Handling Special Repositories (The "Index-URL" Problem)
+#you have two primary options:
+#Option A: Tool-Specific Configuration (e.g., uv or poetry)
 
 [[tool.uv.index]]
 name = "pytorch-cuda"
