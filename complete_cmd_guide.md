@@ -186,3 +186,66 @@ To install from this file, run:
 Pip Documentation
 pip install -r requirements_gpu.txt
 
+
+In pyproject.toml, GPU-specific dependencies are defined under the [project.optional-dependencies] table. This allows users to opt-in to hardware acceleration during installation (e.g., pip install ".[gpu]").
+1. Recommended Structure for 2026
+Modern standards distinguish between base requirements and hardware "extras." Use descriptive keys like gpu, cuda, or rocm.
+toml
+[project]
+name = "my_ml_project"
+version = "0.1.0"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+# Basic GPU extra for standard PyPI packages
+gpu = [
+    "tensorflow[and-cuda]>=2.18",
+]
+
+# Specific hardware extras for PyTorch or JAX
+cuda = [
+    "torch>=2.9.1",
+    "torchvision",
+]
+rocm = [
+    "torch>=2.9.1",
+    "torchvision",
+]
+Use code with caution.
+
+2. Handling Special Repositories (The "Index-URL" Problem)
+Standard pyproject.toml (PEP 621) does not support specifying index-url or --extra-index-url directly within the file. This is a known limitation for libraries like PyTorch that host GPU-specific builds on their own servers. 
+To resolve this in 2026, you have two primary options:
+Option A: Tool-Specific Configuration (e.g., uv or poetry)
+If you use modern tools like uv or Poetry, you can specify custom sources directly in the file:
+toml
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "download.pytorch.org"
+explicit = true
+
+[project.optional-dependencies]
+cuda = ["torch"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cuda" }
+Use code with caution.
+
+Option B: Hybrid Approach (Pip)
+If using standard pip, define the package name in pyproject.toml but instruct users to provide the index during installation:
+bash
+pip install ".[cuda]" --extra-index-url download.pytorch.org
+Use code with caution.
+
+3. Comparison of Installation Commands
+Requirement	Command
+Standard/CPU	pip install .
+General GPU	pip install ".[gpu]"
+NVIDIA CUDA	pip install ".[cuda]"
+AMD ROCm	pip install ".[rocm]"
+Key Considerations for 2026
+Version Pinning: As of 2026, ensure you pin to at least PyTorch 2.9+ or TensorFlow 2.18+ for compatibility with current CUDA 12.x/13.x drivers.
+Dependency Groups: For local development involving GPU testing, you can use the newer [dependency-groups] (PEP 735) for tools that support it, though optional-dependencies remains the standard for published packages.
