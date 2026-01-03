@@ -2,6 +2,17 @@
 
 
 # toml
+
+[project]
+name = "tecxmaai"
+version = "0.1.0"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+]
+
+#[project.optional-dependencies]
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
@@ -9,4 +20,18 @@ dev = [
     "black",
     "mypy",
     "pre-commit",
+]
+# Basic GPU extra for standard PyPI packages
+gpu = [
+    "tensorflow[and-cuda]>=2.18",
+]
+
+# Specific hardware extras for PyTorch or JAX
+cuda = [
+    "torch>=2.9.1",
+    "torchvision",
+]
+rocm = [
+    "torch>=2.9.1",
+    "torchvision",
 ]
