@@ -1,1 +1,7 @@
+pytest>=8.0.0
+pytest-cov
+ruff
+black
+mypy
+pre-commit
 # Python dependencies for development (linters, testers, etc.)
