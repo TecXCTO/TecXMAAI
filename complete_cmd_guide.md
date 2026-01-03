@@ -85,3 +85,51 @@ pip install ruff black mypy pytest pytest-cov pre-commit
 Use code with caution.
 
 For professional projects, I highly recommend setting up a Pre-commit configuration to ensure your code is linted and formatted automatically before it ever reaches GitHub.
+
+
+
+To enable GPU support in 2026, Python dependencies typically depend on your hardware (NVIDIA or AMD) and the specific library (PyTorch, TensorFlow, or JAX) you are using. Modern frameworks now require Python 3.10+ and updated pip versions. 
+1. PyTorch (Recommended for Deep Learning)
+In 2026, the stable version (e.g., v2.9+) supports CUDA 12.6, 12.8, and 13.0 for NVIDIA GPUs. 
+NVIDIA (CUDA 12.6):
+bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+Use code with caution.
+
+AMD (ROCm 6.4):
+bash
+pip install torch torchvision torchaudio --index-url download.pytorch.org
+Use code with caution.
+
+2. TensorFlow (For Production & Serving)
+TensorFlow has unified its CPU and GPU packages for Linux and WSL2. Windows native support remains restricted to older versions (2.10 and below) or requires WSL2 for modern GPU support. 
+Linux / WSL2 (NVIDIA GPU):
+bash
+pip install tensorflow[and-cuda]
+Use code with caution.
+
+Checking Installation:
+python
+import tensorflow as tf
+print(tf.config.list_physical_devices('GPU'))
+Use code with caution.
+
+3. JAX (For Research & High-Performance Computing)
+JAX requires two separate components: the jax Python library and jaxlib, which contains the compiled GPU binaries. 
+NVIDIA (CUDA 13):
+bash
+pip install -U "jax[cuda13]"
+Use code with caution.
+
+Google TPU:
+bash
+pip install -U "jax[tpu]"
+Use code with caution.
+
+Important Prerequisites
+Before installing these libraries, ensure your system meets the following requirements:
+NVIDIA GPU Drivers: Version 525.60+ for Linux or 528.33+ for Windows WSL2.
+CUDA Toolkit: Most 2026 releases target CUDA 12.x or 13.x.
+Environment Check: Use nvidia-smi in your terminal to verify your driver is installed and recognize your GPU. 
+If you are using a requirements file, use a standard URL link in your documentation to guide users to the correct hardware-specific command, as GPU dependencies are often too large for standard PyPI mirrors.
+
