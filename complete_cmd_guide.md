@@ -133,3 +133,56 @@ CUDA Toolkit: Most 2026 releases target CUDA 12.x or 13.x.
 Environment Check: Use nvidia-smi in your terminal to verify your driver is installed and recognize your GPU. 
 If you are using a requirements file, use a standard URL link in your documentation to guide users to the correct hardware-specific command, as GPU dependencies are often too large for standard PyPI mirrors.
 
+
+
+3333333333
+
+To enable GPU support in 2026, your requirements_gpu.txt must point to specific hardware-optimized builds. Standard pip install commands often default to CPU-only versions for heavy libraries like PyTorch or JAX. 
+Recommended requirements_gpu.txt
+Choose the section that matches your framework and hardware (NVIDIA or AMD):
+For PyTorch (NVIDIA CUDA 12.6/12.8)
+text
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch>=2.9.1
+torchvision
+torchaudio
+Use code with caution.
+
+Note: In 2026, PyTorch 2.9+ supports CUDA 12.6, 12.8, and experimental CUDA 13.0. 
+For PyTorch (AMD ROCm 6.4/7.1)
+text
+--extra-index-url download.pytorch.org
+torch>=2.9.1
+torchvision
+torchaudio
+Use code with caution.
+
+For TensorFlow (Linux/WSL2 with NVIDIA)
+text
+# Standard package now includes GPU support via [and-cuda] extra
+tensorflow[and-cuda]>=2.18.0
+Use code with caution.
+
+Note: TensorFlow binaries now ship with dedicated kernels for GPUs with compute capability 8.9 (Ada Lovelace) and above. 
+For JAX (NVIDIA CUDA 13.0+)
+text
+jax[cuda13_pip]
+-f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+Use code with caution.
+
+Note: JAX on CUDA 13 requires NVIDIA GPUs with SM version 7.5 or newer. 
+2026 Hardware Requirements
+NVIDIA Drivers: Ensure you have version 525+ for CUDA 12 or 580+ for CUDA 13 on Linux.
+Python Version: Most 2026 GPU libraries require Python 3.10 to 3.14.
+Verification: After installation, verify GPU access with the following Python snippet:
+python
+import torch
+print(f"GPU Available: {torch.cuda.is_available()}")
+print(f"Device Name: {torch.cuda.get_device_name(0)}")
+Use code with caution.
+
+ 
+To install from this file, run:
+Pip Documentation
+pip install -r requirements_gpu.txt
+
