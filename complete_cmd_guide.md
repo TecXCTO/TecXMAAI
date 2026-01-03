@@ -46,17 +46,21 @@ Pre-commit	Pre-commit	Automatically runs linters before every git commit.
 Create a file named requirements-dev.txt and include: 
 text
 -r requirements.txt  # Includes your main app dependencies
+```
 pytest>=8.0.0
 pytest-cov
 ruff
 black
 mypy
 pre-commit
+```
 Use code with caution.
 
 To install: pip install -r requirements-dev.txt 
+
 2. Using pyproject.toml (Modern Standard)
 If you are using a modern build system (like Setuptools, Flit, or Hatch), add this to your pyproject.toml: 
+```
 toml
 [project.optional-dependencies]
 dev = [
@@ -66,10 +70,12 @@ dev = [
     "mypy",
     "pre-commit",
 ]
+```
 Use code with caution.
 
 To install: pip install -e ".[dev]" 
-Recommended Quick-Start Commands
+
+# Recommended Quick-Start Commands
 If you want to install them immediately via terminal:
 bash
 pip install ruff black mypy pytest pytest-cov pre-commit
