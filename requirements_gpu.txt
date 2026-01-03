@@ -1,1 +1,17 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch>=2.9.1
+torchvision
+torchaudio
+
+--extra-index-url download.pytorch.org
+torch>=2.9.1
+torchvision
+torchaudio
+
+# Standard package now includes GPU support via [and-cuda] extra
+tensorflow[and-cuda]>=2.18.0
+
+jax[cuda13_pip]
+-f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
 # Python dependencies if GPU support is required
