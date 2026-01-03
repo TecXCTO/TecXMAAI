@@ -1,7 +1,10 @@
 import subprocess
+requirements=["requirements.txt","requirements_dev.txt","requirements_gpu.txt"]
 installed_list=[]
 un_installed_list=[]
-with open('requirements.txt', 'r') as f:
+for requirement in requirements:
+    installed_list.append(f"/n # {requirement}")
+    with open(requirement, 'r') as f:
     for line in f:
         package = line.strip()
         if package and not package.startswith('#'):
@@ -13,18 +16,18 @@ with open('requirements.txt', 'r') as f:
                 un_installed_list.append(package)
                 #un_installed_list.extend(package)
                 print(f"Failed to install {package}. Skipping...")
-with open('requirements_all.txt', 'r') as f:
-    for line in f:
-        package = line.strip()
-        if package and not package.startswith('#'):
-            try:
-                subprocess.check_call(['pip', 'install', package])
-                installed_list.append(package)
-                #installed_list.extend(package)
-            except subprocess.CalledProcessError:
-                print(f"Failed to install {package}. Skipping...")
-                un_installed_list.append(package)
-                #un_installed_list.extend(package)
+    #with open('requirements_all.txt', 'r') as f:
+    #for line in f:
+        #package = line.strip()
+        #if package and not package.startswith('#'):
+            #try:
+                #subprocess.check_call(['pip', 'install', package])
+                #installed_list.append(package)
+                ####installed_list.extend(package)
+            #except subprocess.CalledProcessError:
+                #print(f"Failed to install {package}. Skipping...")
+                #un_installed_list.append(package)
+                #####un_installed_list.extend(package)
 with open('installed_list.txt', 'w') as f:
     #f.writelines([j + '\n' for i,j in installed_list])
     for package_list in installed_list:
@@ -40,3 +43,4 @@ with open('un_installed_list.txt', 'w') as f:
         line = "".join(package_list)
         f.write(line + "\n")
 print(f"Installed Python Packages List: {installed_list} \n Uninstalled Python Packages List: {un_installed_list} \n ")
+
