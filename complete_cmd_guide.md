@@ -1,5 +1,5 @@
-To resolve this error, you must decide whether to save or discard your local changes to .gitignore and eci_samples.dvc before Git can pull the new updates.
-Option 1: Save your changes (Recommended) 
+To resolve this error, you must decide whether to save or discard your local changes to .gitignore and samples.dvc before Git can pull the new updates.
+# Option 1: Save your changes (Recommended) 
 Use this if you want to keep your local work. This "stashes" your changes, pulls the updates, and then reapplies your work on top. 
 bash
 ```
@@ -13,7 +13,7 @@ Option 2: Discard your changes
 Use this if you don't care about your local modifications to those two files and want them to match the server exactly.
 bash
 ```
-git checkout -- data/raw/.gitignore data/raw/eci_samples.dvc
+git checkout -- data/raw/.gitignore data/raw/samples.dvc
 git pull
 ```
 Use code with caution.
