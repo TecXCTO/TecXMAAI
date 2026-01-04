@@ -9,7 +9,7 @@ git stash pop
 ```
 Use code with caution.
 
-Option 2: Discard your changes
+#Option 2: Discard your changes
 Use this if you don't care about your local modifications to those two files and want them to match the server exactly.
 bash
 ```
@@ -17,7 +17,7 @@ git checkout -- data/raw/.gitignore data/raw/samples.dvc
 git pull
 ```
 Use code with caution.
-Option 3: Commit your changes 
+#Option 3: Commit your changes 
 If these changes are intentional and ready to be part of the history, commit them first. 
 bash
 ```
