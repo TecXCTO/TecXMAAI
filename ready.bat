@@ -12,6 +12,12 @@ git init
 dvc init
 git commit -m "Initialize DVC"
 
+dvc add data/samples/samples
+
+git add data/samples/.gitignore data/samples/samples.dvc
+git commit -m "Keep local changes to data config"
+git pull
+
 
 git stash
 git pull
