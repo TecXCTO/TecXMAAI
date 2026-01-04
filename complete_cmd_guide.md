@@ -268,12 +268,11 @@ Use code with caution.
 
 3. Comparison of Installation Commands
 Requirement	Command
-```
-Standard/CPU	pip install .
-General GPU	pip install ".[gpu]"
-NVIDIA CUDA	pip install ".[cuda]"
-AMD ROCm	pip install ".[rocm]"
-```
+
+Standard/CPU	```pip install .```
+General GPU	```pip install ".[gpu]"```
+NVIDIA CUDA	```pip install ".[cuda]"```
+AMD ROCm	```pip install ".[rocm]"```
 
 Key Considerations for 2026
 Version Pinning: As of 2026, ensure you pin to at least PyTorch 2.9+ or TensorFlow 2.18+ for compatibility with current CUDA 12.x/13.x drivers.
