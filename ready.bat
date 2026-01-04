@@ -11,3 +11,10 @@ cd TecXMAAI
 git init
 dvc init
 git commit -m "Initialize DVC"
+
+
+git stash
+git pull
+git stash pop
+
+
