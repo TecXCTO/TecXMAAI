@@ -274,6 +274,7 @@ General GPU	pip install ".[gpu]"
 NVIDIA CUDA	pip install ".[cuda]"
 AMD ROCm	pip install ".[rocm]"
 '''
+
 Key Considerations for 2026
 Version Pinning: As of 2026, ensure you pin to at least PyTorch 2.9+ or TensorFlow 2.18+ for compatibility with current CUDA 12.x/13.x drivers.
 Dependency Groups: For local development involving GPU testing, you can use the newer [dependency-groups] (PEP 735) for tools that support it, though optional-dependencies remains the standard for published packages.
