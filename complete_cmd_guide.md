@@ -20,7 +20,7 @@ Use code with caution.
 If these changes are intentional and ready to be part of the history, commit them first. 
 bash
 ```
-git add data/raw/.gitignore data/raw/eci_samples.dvc
+git add data/raw/.gitignore data/raw/samples.dvc
 git commit -m "Keep local changes to data config"
 git pull
 ```
