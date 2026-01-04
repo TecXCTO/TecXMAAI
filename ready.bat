@@ -12,13 +12,30 @@ git init
 dvc init
 git commit -m "Initialize DVC"
 
-dvc add data/samples/samples
+dvc add data/raw/samples
 
 git stash
 git pull
 git stash pop
 
-git add data/samples/.gitignore data/samples/samples.dvc
+git add data/raw/.gitignore data/raw/samples.dvc
 git commit -m "Keep local changes to data config"
 git pull
+
+# For Windows, download the installer from: https://git-lfs.github.com/
+# After installation, open your terminal or Git Bash and run:
+git lfs install
+
+
+git lfs track "*.stl"  # Track STL files (3D models)
+git lfs track "*.h5"   # Track Keras/TensorFlow model weights
+git lfs track "data/raw/*.csv" # Track raw data files
+git add .gitattributes
+git commit -m "Configure Git LFS tracking"
+git push
+
+
+git add large_model.h5
+git commit -m "Add a large trained model"
+git push origin main
 
