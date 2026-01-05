@@ -1,4 +1,4 @@
-name: Computational Engineering CI Pipeline
+name: TecXMAAI CI Pipeline
 
 on:
   pull_request:
@@ -26,3 +26,4 @@ jobs:
       - name: Run unit tests
         run: pytest tests/ # Execute your test suite
         
+
