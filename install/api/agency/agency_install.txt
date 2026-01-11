@@ -1,0 +1,9 @@
+# 2026 Mechanical Engineering Agentic AI Stack
+
+pyansys[all]>=2025.1.0        # Comprehensive Ansys simulation suite
+aps-toolkit                   # Autodesk Platform Services (Cloud CAD)
+pytwin                        # Digital Twin management
+ansys-simai-core              # AI-accelerated physics prediction
+solid-client-python           # Decentralized data Pod access
+pywin32                       # Local COM bridge for Desktop Inventor/SolidWorks
+langgraph                     # Agentic workflow orchestration (optional but recommended)
