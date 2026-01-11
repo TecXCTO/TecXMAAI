@@ -257,4 +257,68 @@ MATLAB Engine API for Python: Enables Python-based agent frameworks (like LangCh
 Financial Trading: Third-party APIs like IB-MATLAB enable "automated trading agents" to interact with brokers like Interactive Brokers for real-time market data and order execution.
 IoT Agents: The ThingSpeak API allows MATLAB scripts to act as cloud-based agents that monitor, analyze, and act on IoT sensor data.
 
+
+
+#
+
+# Installation of these components in 2026 involves a mix of OS-level terminal commands and internal MATLAB commands.
+
+1. Agentic AI & LLM Agents
+MATLAB MCP Client & LLM Add-on: The modern way to install these "agentic" capabilities is through the MATLAB Add-on Explorer.
+In MATLAB:
+Open the Add-On Explorer from the Home tab.
+Search for and install: MATLAB MCP HTTP Client and Large Language Models (LLMs) with MATLAB.
+Via GitHub (CLI): You can clone the repo and add it to your path:
+
+bash
+git clone https://github.com/matlab-deep-learning/llms-with-matlab
+
+Use code with caution.
+
+Then in MATLAB: addpath(genpath('llms-with-matlab')). 
+
+2. Reinforcement Learning & Toolboxes
+You can install these programmatically using the MATLAB Package Manager (mpm) from your system terminal. 
+Windows (CMD/PowerShell as Admin):
+
+cmd
+.\mpm.exe install --release=R2026a --destination="C:\Program Files\MATLAB\R2026a" --products Reinforcement_Learning_Toolbox Deep_Learning_Toolbox
+
+Use code with caution.
+
+Linux/macOS:
+bash
+
+./mpm install --release=R2026a --destination=/usr/local/MATLAB/R2026a --products Reinforcement_Learning_Toolbox Deep_Learning_Toolbox
+
+Use code with caution.
+
+3. MATLAB Engine API for Python
+
+This is required if you want your Python-based agents (like those using LangChain or AutoGen) to call MATLAB.
+From PyPI (Standard):
+bash
+
+python -m pip install matlabengine
+
+Use code with caution.
+
+From local MATLAB installation:
+bash
+
+# Navigate to your local MATLAB python engine folder
+
+cd "matlabroot/extern/engines/python" 
+python -m pip install .
+
+Use code with caution.
+
+(Note: Replace matlabroot with your actual installation path, e.g., C:\Program Files\MATLAB\R2026a). 
+
+4. MATLAB Production Server (REST API)
+The Production Server is typically installed via the standard MathWorks installer. To check if the REST API is active, navigate to your server's dashboard or use a simple curl command:
+Check Status:
+bash
+
+curl http://localhost:9910/api/health
 ```
