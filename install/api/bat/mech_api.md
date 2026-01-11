@@ -103,4 +103,32 @@ Model Context Protocol (MCP): In 2026, the best practice is to wrap your Invento
 Engine Update: Ensure your automation code is updated to .NET 8, as the Inventor 2026 Design Automation engine has officially migrated to this version. 
 
 
+#
+
+In 2026, mechanical engineering APIs for agentic AI have shifted from simple script execution to "tool-calling" interfaces where autonomous agents can reason about physics, geometry, and manufacturing constraints.
+1. Generative Design & CAD APIs
+These APIs allow agents to create and modify 3D models autonomously to meet engineering goals.
+Autodesk Platform Services (APS) Design Automation API: This is the primary cloud-based interface for Inventor and Fusion. It allows agents to modify IPT (parts) and IAM (assemblies) without a local install. Agents use it to check design code compliance and automate repetitive modeling.
+Onshape REST API: A cloud-native CAD API that agents use for real-time collaborative design. Its JSON-based architecture is highly compatible with LLM function-calling for structural design updates. 
+2. Simulation & Physics APIs (CAE)
+Agents use these to run simulations, evaluate performance, and iterate on designs.
+PyAnsys Ecosystem: The most robust Pythonic interface for solvers. It includes PyMAPDL (structural), PyFluent (fluids), and PyAEDT (electronics). These allow agents to set up boundary conditions and run FEA/CFD analysis programmatically.
+SimScale Engineering AI API: An agentic assistant built directly into the platform that novices can use to diagnose missing inputs and suggest geometry-based settings.
+NVIDIA Modulus API: Used for physics-informed machine learning (PINNs). Agents leverage this to create digital twins that simulate mechanical systems at near real-time speeds. 
+3. Robotics & Control APIs
+For agents managing physical hardware or manufacturing lines.
+Quanser QUBE-Servo 2 API: Used by AI agents for real-time adaptive control (e.g., PID tuning) of motor systems.
+NVIDIA NeMo Agent Toolkit: Provides orchestration and observability tools to connect mechanical "agent teams" that monitor factory sensor data and coordinate robotic movements. 
+4. Manufacturing & Supply Chain APIs
+Acuvate Agentic AI API: Specifically targeted at manufacturing use cases like predictive maintenance, quality control, and autonomous inventory management.
+NVIDIA cuOpt: Used by agents for world-record accuracy in complex route optimization for factory floor logistics and supply chains. 
+Implementation Tip: MCP (Model Context Protocol)
+In 2026, the standard for connecting these APIs to an agent is the Model Context Protocol (MCP). Instead of raw API calls, you wrap your Ansys or Inventor functions as MCP "tools." This allows the agent to discover the capabilities of the mechanical engineering toolset (e.g., run_stress_test() or update_fillet_radius()) and call them with reasoning.
+
+#
+
+
+
+
+
 ```
