@@ -53,6 +53,14 @@ Use code with caution.
 If this prints the model information successfully, your agentic AI can now programmatically interact with the Ansys solver.
 
 
+2. SOLIDWORKS (Design Automation)
+
+If you are referring to SOLIDWORKS (often colloquially called "Solid" by engineers), agentic AI is used to automate CAD design and lifecycle management. 
+Core API: The SOLIDWORKS API 2026 is a COM-based interface that provides direct access to 3D CAD functionality.
+Web API: The SOLIDWORKS PDM Professional Web API offers RESTful endpoints for agents to manage product data operations via the web.
+Agentic Integration: Agents use these APIs to perform tasks like renaming, replacing, and copying documents autonomously based on engineering goals. 
+
+
 
 
 
