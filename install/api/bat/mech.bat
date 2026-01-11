@@ -47,3 +47,30 @@ python -m pip install aps-toolkit
 
 # Design Automation Utilities:
 dotnet add package Autodesk.Forge.DesignAutomation.Inventor.Utils
+
+
+# 3. Robotics & AI Orchestration (NVIDIA)
+
+# NeMo Agent Toolkit:
+# Clone and sync environment
+git clone -b main git@github.com:NVIDIA/NeMo-Agent-Toolkit.git
+cd nemo-agent-toolkit
+uv sync --all-groups --all-extras
+
+
+# 4. Manufacturing Agent Environment (Acuvate/Databricks)
+
+
+# Summary of Quick Install Commands
+# Category	Primary Library	Install Command
+#Simulation	PyAnsys	
+pip install pyansys
+# CAD Automation	APS Toolkit	
+pip install aps-toolkit
+# Robotics Agents	NeMo Agent	
+pip install nemo-agent-toolkit
+# Control Systems	Python-COM	
+pip install pywin32
+
+
+
