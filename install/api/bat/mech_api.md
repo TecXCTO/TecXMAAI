@@ -61,7 +61,46 @@ Web API: The SOLIDWORKS PDM Professional Web API offers RESTful endpoints for ag
 Agentic Integration: Agents use these APIs to perform tasks like renaming, replacing, and copying documents autonomously based on engineering goals. 
 
 
+ Autodesk Inventor for an "agency" or agentic AI environment involves two paths: installing the local Software Development Kit (SDK) for desktop agents or using the Autodesk Platform Services (APS) for cloud-based agents.
+1. Local Agent Setup (Desktop SDK)
+If your AI agent runs locally on a machine with Inventor installed, you must install the SDK to provide the agent with the necessary type libraries and interop assemblies.
+Install Command (via Standalone Installer):
+Inventor 2026 includes the Apprentice Server, which is now registry-free. To make it accessible for COM-based AI tools, run the following command from the Inventor bin directory (as administrator):
+powershell
+ApprenticeRegSrv.exe /install
+Use code with caution.
 
+Locating the SDK: The SDK installer (Developertools.msi) is typically found in your Inventor installation folder at:
+C:\Users\Public\Documents\Autodesk\Inventor 2026\SDK\Developertools.msi. 
+2. Cloud Agent Setup (Autodesk Platform Services)
+For agents running in an "agency" platform (like Agent.ai or a custom cloud orchestration layer), you do not install Inventor. Instead, you use the Design Automation API for Inventor.
+Step 1: Get the Utils Library (NuGet):
+If your agent is written in .NET (the standard for 2026 Inventor automation), use this command:
+bash
+dotnet add package Autodesk.Forge.DesignAutomation.Inventor.Utils
+```
+Use code with caution.
+
+Step 2: Connect via REST API:
+Configure your agent to communicate with the Automation API endpoint.
+Endpoint: developer.api.autodesk.com
+Authentication: Requires an OAuth 2.0 token from the Autodesk Developer Portal. 
+3. Python Integration for Agents
+For AI agents using Python (common in agentic workflows), you use the pywin32 library to bridge to the Inventor COM API or call the cloud APIs directly.
+Install Command:
+bash
+# Essential for local COM interaction
+pip install pywin32 
+
+# Optional community-based Python wrapper (verify latest 2026 compatibility)
+pip install pyinventor
+```
+
+Use code with caution.
+
+Summary for AI Implementation
+Model Context Protocol (MCP): In 2026, the best practice is to wrap your Inventor commands into an MCP Server. This allows an LLM to "see" and "use" Inventor as a tool.
+Engine Update: Ensure your automation code is updated to .NET 8, as the Inventor 2026 Design Automation engine has officially migrated to this version. 
 
 
 ```
