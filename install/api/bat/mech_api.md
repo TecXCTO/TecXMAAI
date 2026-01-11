@@ -128,6 +128,58 @@ In 2026, the standard for connecting these APIs to an agent is the Model Context
 #
 
 
+installing mechanical engineering APIs for agentic AI primarily involves setting up Python-based environments that allow autonomous agents to call simulation and design tools.
+1. Simulation & Physics (PyAnsys)
+The PyAnsys ecosystem is the standard for 2026 agentic simulation. You can install the full metapackage or specific solvers. 
+Complete Suite:
+bash
+python -m pip install -U pip
+python -m pip install pyansys[all]
+Use code with caution.
+
+Targeted Solvers (Fluid or Structural):
+bash
+# For Fluid Dynamics agents
+python -m pip install pyansys[fluent-all]
+
+# For Structural Analysis agents
+python -m pip install ansys-mapdl-core
+Use code with caution.
+
+2. Cloud CAD & Generative Design (Autodesk)
+For agents in an "agency" platform like Agent.ai, you use Autodesk Platform Services (APS) to perform cloud-based design automation without needing a local Inventor install. 
+APS Python Toolkit:
+bash
+python -m pip install aps-toolkit
+Use code with caution.
+
+Design Automation Utilities:
+bash
+dotnet add package Autodesk.Forge.DesignAutomation.Inventor.Utils
+Use code with caution.
+
+3. Robotics & AI Orchestration (NVIDIA)
+To build agents that coordinate mechanical hardware or factory logistics, use NVIDIA's 2026 toolkit. 
+NeMo Agent Toolkit:
+bash
+# Clone and sync environment
+git clone -b main git@github.com:NVIDIA/NeMo-Agent-Toolkit.git
+cd nemo-agent-toolkit
+uv sync --all-groups --all-extras
+Use code with caution.
+
+4. Manufacturing Agent Environment (Acuvate/Databricks)
+Enterprise agentic workflows for manufacturing often run on serverless environments like Databricks. 
+Installation: Within your Databricks workspace, upload a requirements.txt containing your enterprise AI libraries (e.g., acuvate-agent-core, langchain-ansys) to the Environment section and click Apply. 
+Summary of Quick Install Commands
+Category	Primary Library	Install Command
+Simulation	PyAnsys	pip install pyansys
+CAD Automation	APS Toolkit	pip install aps-toolkit
+Robotics Agents	NeMo Agent	pip install nemo-agent-toolkit
+Control Systems	Python-COM	pip install pywin32
+
+#
+
 
 
 
