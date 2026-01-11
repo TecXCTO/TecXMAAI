@@ -73,4 +73,53 @@ pip install nemo-agent-toolkit
 pip install pywin32
 
 
+#
+
+# 1. Agentic AI & LLM Agents
+
+# MATLAB MCP Client & LLM Add-on:
+
+# Via GitHub (CLI):
+
+git clone https://github.com/matlab-deep-learning/llms-with-matlab
+
+# Then in MATLAB: addpath(genpath('llms-with-matlab'))
+
+#  2. Reinforcement Learning & Toolboxes
+
+# Windows (CMD/PowerShell as Admin):
+
+.\mpm.exe install --release=R2026a --destination="C:\Program Files\MATLAB\R2026a" --products Reinforcement_Learning_Toolbox Deep_Learning_Toolbox
+
+
+# Linux/macOS:
+
+./mpm install --release=R2026a --destination=/usr/local/MATLAB/R2026a --products Reinforcement_Learning_Toolbox Deep_Learning_Toolbox
+
+#  3. MATLAB Engine API for Python
+
+# From PyPI (Standard) :
+
+python -m pip install matlabengine
+
+# From local MATLAB installation:
+
+# Navigate to your local MATLAB python engine folder
+
+cd "matlabroot/extern/engines/python" 
+python -m pip install .
+
+# (Note: Replace matlabroot with your actual installation path, e.g., C:\Program Files\MATLAB\R2026a)
+
+
+# 
+
+# 4. MATLAB Production Server (REST API)
+
+# The Production Server is typically installed via the standard MathWorks installer. To check if the REST API is active, navigate to your server's dashboard or use a simple curl command:
+# Check Status:
+curl http://localhost:9910/api/health
+
+
+
 
