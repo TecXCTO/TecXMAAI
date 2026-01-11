@@ -229,4 +229,32 @@ Summary of Keys for Agent.ai
 Once installed, use these libraries to build "Tools" for your agent. For cloud platforms like Agent.ai, you will primarily use the REST endpoints provided by these installed services (e.g., Ansys SimAI or Autodesk APS) rather than running the heavy solvers directly on the agent's server. 
 
 
+
+#
+
+# MATLAB offers several specialized APIs and frameworks for creating, managing, and connecting "agents," primarily focused on Agentic AI (LLM-based agents) and Reinforcement Learning (autonomous agents). 
+
+1. Agentic AI & LLM Agents (2026 Updates)
+MathWorks has introduced significant capabilities for building AI agents that can interact with external tools and the MATLAB environment. 
+MATLAB MCP Client: Released in late 2025, this implementation of the Model Context Protocol (MCP) allows AI agents (like Claude or custom LLMs) to connect directly to MATLAB tools. Agents can use this API to:
+List available MATLAB functions as "tools."
+Invoke simulations and data analysis scripts.
+Automate engineering tasks end-to-end.
+LLMs with MATLAB Add-on: This GitHub-hosted framework provides the foundational API to connect MATLAB with LLM providers like OpenAI, Azure, and Ollama. It serves as the bridge for building "agentic" workflows where an LLM manages task execution. 
+
+2. Reinforcement Learning (RL) Agents
+The Reinforcement Learning Toolbox uses a class-based API to represent autonomous agents as MATLAB objects. 
+Built-in Agent Types: Supported algorithms include PPO (rlPPOAgent), DQN (rlDQNAgent), SAC (rlSACAgent), and more.
+Custom Agent API: You can create custom agents by defining a new class that inherits from the toolbox's base agent classes, allowing for specialized reward structures and policies.
+Multi-Agent API: Functions like train accept arrays of agent objects to facilitate collaborative or competitive multi-agent training. 
+
+3. Application Deployment APIs
+For deploying agents into production environments, MATLAB provides specific service-oriented APIs: 
+MATLAB Production Server REST API: Allows external applications (web, mobile, or enterprise) to call MATLAB-based agent logic using standard HTTP methods (POST, GET, DELETE).
+MATLAB Engine API for Python: Enables Python-based agent frameworks (like LangChain or AutoGen) to call MATLAB functions and models directly as if they were native Python modules. 
+
+4. Specialized Industry Agents
+Financial Trading: Third-party APIs like IB-MATLAB enable "automated trading agents" to interact with brokers like Interactive Brokers for real-time market data and order execution.
+IoT Agents: The ThingSpeak API allows MATLAB scripts to act as cloud-based agents that monitor, analyze, and act on IoT sensor data.
+
 ```
